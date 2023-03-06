@@ -13,6 +13,11 @@ public class RespostaListaExercicio {
 		calcularImc(76.5f, 1.72f);
 		calcularAreaTrapezio(5f, 8f, 5f);
 		maiorEntreDoisInteiros(12, 9);
+		verificarParImpar(4);
+		float[] notas = {7.5f, 9.4f, 3.4f, 6.5f};
+		calcularMediaNotas(notas);
+		int[] array = {1, 2, 3 ,4 ,5};
+		imprimirArrayInverso(array);
 		
 	}
 	
@@ -73,7 +78,11 @@ public class RespostaListaExercicio {
 	 */
 	public static boolean verificarParImpar(int numero) 
 	{
-		return false;		
+		if(numero%2 != 0 ) {
+			return false;
+		}else{
+			return true;
+		}		
 	}
 	
 	/**
@@ -83,7 +92,16 @@ public class RespostaListaExercicio {
 	 * @return media
 	 */
 	public static float calcularMediaNotas(float[] notas) {
-		return 0f;
+		float resultado = 0;
+		int divisao = 0;
+		float soma = 0;
+		for(int i=0; i < notas.length;i++) {
+			divisao = i +1;
+			soma += notas[i];
+			resultado = soma/divisao;
+		};
+		System.out.println(resultado);
+		return resultado;
 	}
 	
 	/**
@@ -94,7 +112,15 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirArrayInverso(int[] array)
 	{
-		System.out.print("");
+		int inverso = 0;
+		for(int i=array.length-1; i > -1 ; i--) {
+			inverso = array[i];
+			if(i != 0) {
+			 System.out.print(inverso + ",");
+			}else {
+				System.out.print(inverso);
+			}
+		}
 	}
 	
 	/**
