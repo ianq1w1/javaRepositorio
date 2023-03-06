@@ -10,6 +10,10 @@ public class RespostaListaExercicio {
 	 */
 	public static void main(String[] args) {
 		
+		calcularImc(76.5f, 1.72f);
+		calcularAreaTrapezio(5f, 8f, 5f);
+		maiorEntreDoisInteiros(12, 9);
+		
 	}
 	
 	/**
@@ -21,7 +25,9 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularImc(float peso, float altura) 
 	{
-		return 0f;
+		float resultado = peso/(altura*altura);
+		System.out.println(resultado);
+		return resultado;
 	}
 	
 	/**
@@ -34,7 +40,9 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularAreaTrapezio(float baseMaior, float baseMenor, float altura) 
 	{	
-		return 0f;
+		float resultado = (baseMaior + baseMenor) * altura/2;
+		System.out.println(resultado);
+		return resultado;
 	}
 	
 	/**
@@ -47,7 +55,13 @@ public class RespostaListaExercicio {
 	 */
 	public static int maiorEntreDoisInteiros(int a, int b) 
 	{
-		return 0;
+		if(a > b) {
+			System.out.println(a);
+			return a;
+		}else{
+			System.out.println(b);
+			return b;
+		}
 	}
 	
 	/**
