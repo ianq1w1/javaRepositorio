@@ -16,9 +16,13 @@ public class RespostaListaExercicio {
 		verificarParImpar(4);
 		float[] notas = {7.5f, 9.4f, 3.4f, 6.5f};
 		calcularMediaNotas(notas);
-		int[] array = {1, 2, 3 ,4 ,5};
+		int[] array = {1, 2, 3 ,4 ,5,6,7,15,9,10};
 		imprimirArrayInverso(array);
-		
+		imprimirElementosPrimos(array);
+		imprimirElementosImpares(array);
+		imprimirElementosPares(array);
+		imprimirMaiorMenorElemento(array);
+		calcularMediaAritmetica(array);
 	}
 	
 	/**
@@ -131,9 +135,14 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPrimos(int[] array) 
 	{
-		System.out.print("");
+		System.out.print("\r\n"); 
+		for(int i=0;i<array.length;i++) {
+				int primo = array[i];
+				if((primo%2 !=0) && (primo != 1) || (primo == 2)) {
+					System.out.print(primo + " ");
+			     }
+		 }
 	}
-	
 	
 	/**
 	 * Método deve imprimir os elementos ímpares de um array de inteiros. O formato da impressão 
@@ -143,7 +152,12 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosImpares(int[] array) 
 	{
-		System.out.print("");
+		System.out.print("\r\n"); 
+		for(int i=0; i<array.length;i++) {
+			if(array[i]%2 != 0) {
+				System.out.print(array[i] + " ");
+			}
+		}
 	}
 	
 	
@@ -155,7 +169,12 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirElementosPares(int[] array) 
 	{
-		System.out.print("");
+		System.out.print("\r\n"); 
+		for(int i=0; i<array.length;i++) {
+			if(array[i]%2 == 0) {
+				System.out.print(array[i] + " ");
+			}
+		}
 	}
 	
 	
@@ -167,7 +186,22 @@ public class RespostaListaExercicio {
 	 */
 	public static void imprimirMaiorMenorElemento(int[] array) 
 	{
-		System.out.print("");
+		System.out.print("\r\n");
+		int maior = 0;
+		int menor = 0;
+		for(int i=0;i<array.length;i++) {
+			if(array[i] > maior) {
+				maior = array[i];
+		}
+		for(int j=0; j<array.length; j++) {
+			if(array[j] <= array[0]) {
+				menor = array[j];
+				
+			}
+		}
+	
+	}
+		System.out.print(menor + " " + maior);
 	}
 	
 	/**
@@ -178,7 +212,17 @@ public class RespostaListaExercicio {
 	 */
 	public static float calcularMediaAritmetica(int[] array) 
 	{
-		return 0f;
+		int resultado = 0;
+		int divisao = 0;
+		int soma = 0; 
+		for(int i=0; i < array.length;i++) {
+			divisao = i +1;
+			soma += array[i];
+			resultado = soma/divisao;
+		}
+		System.out.println(resultado);
+		return resultado;
 	}
 	
 }
+
